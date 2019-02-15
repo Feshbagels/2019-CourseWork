@@ -1,6 +1,7 @@
+package somethign;
 import java.util.Scanner;
 
-public class main {
+public class mainClass {
 	public static int factorial(int value) {
 		int answer = 1;
 		for (int i = 2; i <= value; i++) {
@@ -13,24 +14,29 @@ public class main {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Enter the number of times you want to use the calculator.");
 		int[] history = new int[sc.nextInt()];
-		System.out.println("Thank you! Enter any 5-digit number that you want the factorial value of. Please note the limit due to Java's 32-bit restrictions.");
+		System.out.println("Thank you! Enter any 5-digit number that you want the factorial value of. Please note the limit due to Java's 32-bit limit.");
 		sc.nextLine();
-
 
 		for (int i = 0; i < history.length; i++) {
 			String inputvalue = sc.nextLine();
 			try {
-				if (Integer.parseInt(inputvalue) < 100000) {
+				if (Integer.parseInt(inputvalue) < 32) {
 					System.out.println(factorial(Integer.parseInt(inputvalue)));
-					history[i] = System.out.println(factorial(Integer.parseInt(inputvalue)));
+				} else {
+					System.out.println("Number's too big, man! The limit is 31.");
 				}
 			} catch (Exception e) {
 				inputvalue.toLowerCase().equals("history");
-				System.out.println("Here's the list of you calculated values!");
+				System.out.println("Here's the list of your calculated values!");
 				for (int j = 0; j < history.length; j++) {
 					System.out.println(history[j]);
 				}
 			}
+		}
+		
+		for (int j = 0; j < history.length; j++) {
+			System.out.println("Here's the list of your calculated values!");
+			System.out.println(history[j]);
 		}
 	}
 }
