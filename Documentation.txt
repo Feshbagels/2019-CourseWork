@@ -1,7 +1,7 @@
-package somethign;
+package testinghere;
 import java.util.Scanner;
 
-public class mainClass {
+public class Main{
 	public static int factorial(int value) {
 		int answer = 1;
 		for (int i = 2; i <= value; i++) {
