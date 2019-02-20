@@ -1,4 +1,4 @@
-package testinghere;
+package somethign;
 // import java scanner utility
 import java.util.Scanner;
 
@@ -8,15 +8,15 @@ import java.util.Scanner;
  * @version 1.2
  * @since 1.0
  */
-
-public class Main{
+public class mainClass{
+	
 	/** 
-	 * A function that calculates the factorial of whatever integer value is input into the console.
-	 * <p> The input value is the number of times the answer, set to 1 as a starting point, is multiplied by i, which increases the to the lenbth of the input.
+	 * Calculates the factorial of whatever integer value is input into the console.
+	 * <p> The input value is the number of times the answer, set to 1 as a starting point, is multiplied by i, which increases the to the length of the input.
 	 * </p>
 	 * @param answer placeholder which can be manipulated
 	 * @param value integer which can be used to calculate the factorial
-	 * @return factorialized value
+	 * @return factorial'd value
 	 */
 	public static int factorial(int value) {
 		int answer = 1;
@@ -27,38 +27,40 @@ public class Main{
 	}
 	
 	/**
-	*
+	* Outputs instructions for user and calculated values.
+	* <p>
+	* Uses scanner to take console inputs,
+	* 
+	* </p>
 	*/
 	public static void main (String[] args) {
 		Scanner sc = new Scanner(System.in);
 		
-		/*
-		 * Prints out starting message and takes the times the calculator will be run.
-		 */
+		//Prints out starting message and takes the times the calculator will be run.
 		System.out.println("Enter the number of times you want to use the calculator.");
 		
-		/*
-		 * Creates list called 'history' which contains integers input after the first input.
-		 */
+		
+		//Creates list called 'history' which contains integers input after the first input.
 		int[] history = new int[sc.nextInt()];
 		
 		System.out.println("Thank you! Enter any 5-digit number that you want the factorial value of. Please note the limit due to Java's 32-bit limit.");
 		sc.nextLine();
 		
-		/*
-		 * Loop which repeats for the amount of times of the first input.
-		 */
+		//loop which repeats for the amount of times of the first input.
 		for (int i = 0; i < history.length; i++) {
 			String inputvalue = sc.nextLine();
+			//tries to calculate the value of whatever is input. If the input is higher than 31 it will not work because java.
 			try {
 				if (Integer.parseInt(inputvalue) < 32) {
+					//changes the input value into an integer which can be used in the factorial function and adds the final value to the list.
 					System.out.println(factorial(Integer.parseInt(inputvalue)));
 					history[i] = factorial(Integer.parseInt(inputvalue));
 				} else {
+					//prints if input value exceeds 31
 					System.out.println("Number's too big, man! The limit is 31.");
 				}
 			} catch (Exception e) {
-				//if the input is any lower-uppercase combination of 'history' the list will be printed.
+				//if the input is any lower-upper case combination of 'history' the list will be printed.
 				inputvalue.toLowerCase().equals("history");
 				System.out.println("Here's the list of your calculated values!");
 				
