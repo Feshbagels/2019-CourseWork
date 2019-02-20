@@ -14,7 +14,6 @@ public class mainClass{
 	 * Calculates the factorial of whatever integer value is input into the console.
 	 * <p> The input value is the number of times the answer, set to 1 as a starting point, is multiplied by i, which increases the to the length of the input.
 	 * </p>
-	 * @param answer placeholder which can be manipulated
 	 * @param value integer which can be used to calculate the factorial
 	 * @return factorial'd value
 	 */
@@ -29,8 +28,7 @@ public class mainClass{
 	/**
 	* Outputs instructions for user and calculated values.
 	* <p>
-	* Uses scanner to take console inputs,
-	* 
+	* Uses scanner to take console inputs
 	* </p>
 	*/
 	public static void main (String[] args) {
