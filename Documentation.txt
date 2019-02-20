@@ -1,7 +1,16 @@
 package testinghere;
 import java.util.Scanner;
 
+/**
+ *  Documentation Assignment - Factorial Calculator
+ * @author Ryan Lu
+ *
+ */
+
 public class Main{
+	/* 
+	 * A function that calculates the factorial of whatever integer value is input into the console.
+	 */
 	public static int factorial(int value) {
 		int answer = 1;
 		for (int i = 2; i <= value; i++) {
@@ -9,19 +18,33 @@ public class Main{
 		}
 		return answer;
 	}
+	
 
 	public static void main (String[] args) {
 		Scanner sc = new Scanner(System.in);
+		
+		/*
+		 * Prints out starting message and takes the times the calculator will be run.
+		 */
 		System.out.println("Enter the number of times you want to use the calculator.");
+		
+		/*
+		 * Creates list called 'history' which contains integers input after the first input.
+		 */
 		int[] history = new int[sc.nextInt()];
+		
 		System.out.println("Thank you! Enter any 5-digit number that you want the factorial value of. Please note the limit due to Java's 32-bit limit.");
 		sc.nextLine();
-
+		
+		/*
+		 * Loop which repeats for the amount of times of the first input.
+		 */
 		for (int i = 0; i < history.length; i++) {
 			String inputvalue = sc.nextLine();
 			try {
 				if (Integer.parseInt(inputvalue) < 32) {
 					System.out.println(factorial(Integer.parseInt(inputvalue)));
+					history[i] = factorial(Integer.parseInt(inputvalue));
 				} else {
 					System.out.println("Number's too big, man! The limit is 31.");
 				}
@@ -34,9 +57,10 @@ public class Main{
 			}
 		}
 		
-		for (int j = 0; j < history.length; j++) {
-			System.out.println("Here's the list of your calculated values!");
-			System.out.println(history[j]);
+		System.out.println("Here's the list of your calculated values!");
+		for (int i = 0; i < history.length; i++) {
+			System.out.println(history[i]);
 		}
+		
 	}
 }
