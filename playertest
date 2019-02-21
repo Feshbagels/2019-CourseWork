@@ -1,0 +1,17 @@
+float linePos;
+void settings(){
+  size(1000,1000);
+}
+
+void setup(){
+}
+
+void draw(){
+  background(255);
+  linePos = linePos + 1;
+  line(linePos, 0, linePos, height);
+  if (linePos >= width){
+    linePos = 0;
+  }
+}
+
