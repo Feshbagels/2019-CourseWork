@@ -1,17 +1,33 @@
+import processing.sound.*;
 float linePos;
-void settings(){
-  size(1000,1000);
+int noteNum;
+
+void settings() {
+  size(1000, 1000);
 }
 
-void setup(){
+void setup() {
 }
 
-void draw(){
+void draw() {
   background(255);
+  playLine();
+  noteNum += 1;
+  
+  while (noteNum < 5){
+    noteGen();
+  }
+  
+}
+
+void playLine() {
   linePos = linePos + 1;
   line(linePos, 0, linePos, height);
-  if (linePos >= width){
+  if (linePos >= width) {
     linePos = 0;
   }
 }
 
+void noteGen() {
+  rect(random(1000), random(1000), 5, 5);
+}
