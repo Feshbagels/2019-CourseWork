@@ -27,7 +27,7 @@ void draw() {
   }
 
   if (epic == true) {
-    text("that was legitness yeah it was", CENTER, CENTER);
+    text("that was legitness yeah it was", width/2, height/2 + 200);
   }
 }
 
