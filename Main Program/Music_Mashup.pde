@@ -1,37 +1,52 @@
-/* Music Mashup! - computer generated music wow
+/* Music Mashup! - computer generated "music" wow
  *
  *@author Ryan Lu
  *@version 1.0
  */
 
-float linePos, textColour;
-boolean playMusic;
-PFont font;
+
+boolean start, epic;
 
 void settings() {
   size(1000, 1000);
 }
 
 void setup() {
-  playMusic = false;
+  start = false;
   colorMode(HSB);
 }
 
 void draw() {
-  startup();
-  if (playMusic == true) {
-    //play song
+  if (start == false) {
+    startup();
+  } else {
+  }
+
+  if (start == true) {
+    gui();
+  }
+
+  if (epic == true) {
+    text("that was legitness yeah it was", CENTER, CENTER);
   }
 }
 
-void startup() {
-  background(20, 300, 250);
-  font = createFont("TrebuchetMS.vlw", 48);
-  textFont(font);
-  textAlign(CENTER, CENTER);
-  textColour = (textColour + 5)%360;
-  fill(textColour, 300, 300);
+void mouseClicked() {
+  if (start == false) {
+    if (mouseX >=((width/2)-100) && mouseY >=((height/2)-50) && mouseX <=((width/2)+100) && mouseY <= ((height/2)+50)) {
+      fill(360, 0, 100);
+      textColour = 0;
+      start = true;
+    }
+  }
 
-  text("Music Mashup", width/2, 150);
-  text("A whole lot of nothing I know", width/2, height/2);
+  if (start == true) {
+    if (mouseX >=((width/2)-100) && mouseY >=((height/2)-50) && mouseX <=((width/2)+100) && mouseY <= ((height/2)+50)) {
+      if (epic == false){
+        epic = true;
+      } else if (epic == true){
+        epic = false;
+      }
+    }
+  }
 }
