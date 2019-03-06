@@ -1,12 +1,5 @@
-/* Music Mashup! - computer generated "music" wow
- *
- *@author Ryan Lu
- *@version 1.0
- */
-
-
 boolean start, epic;
-
+PFont font;
 void settings() {
   size(1000, 1000);
 }
@@ -14,6 +7,9 @@ void settings() {
 void setup() {
   start = false;
   colorMode(HSB);
+  font = createFont("Trebuchet MS", 48);
+  textFont(font);
+  textAlign(CENTER, CENTER);
 }
 
 void draw() {
@@ -31,22 +27,16 @@ void draw() {
   }
 }
 
+
 void mouseClicked() {
   if (start == false) {
-    if (mouseX >=((width/2)-100) && mouseY >=((height/2)-50) && mouseX <=((width/2)+100) && mouseY <= ((height/2)+50)) {
-      fill(360, 0, 100);
-      textColour = 0;
+    if (start_button.MouseOver()) {
       start = true;
     }
   }
-
   if (start == true) {
-    if (mouseX >=((width/2)-100) && mouseY >=((height/2)-50) && mouseX <=((width/2)+100) && mouseY <= ((height/2)+50)) {
-      if (epic == false){
-        epic = true;
-      } else if (epic == true){
-        epic = false;
-      }
+    if (epic_button.MouseOver()) {
+      epic = true;
     }
   }
 }
