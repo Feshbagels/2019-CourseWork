@@ -7,14 +7,12 @@ int digit = 20190505;
 int iterativeSumDigit(int n) {     
   int sum = 0; 
   while (n != 0) { 
-    //takes the value at each digit
+    //takes the value at each digit (base 10)
     sum = sum + n % 10; 
     n = n/10;
   } 
   return sum;
 } 
-
-
 
 //each stack is the value of the specific place value, starting from the left. base case is when n/10 = 0, which would be when it reaches the tenths place after the ones place.
 int recursiveSumDigit(int n) {
@@ -24,9 +22,7 @@ int recursiveSumDigit(int n) {
   return (n % 10 + recursiveSumDigit(n / 10));
 }
 
-
-
-//driver to run both at same time
+//driver to run both
 void sumDigits() {
   println("The sum of the digits of " + digit + " calculated iteratively is " + iterativeSumDigit(digit) + ".");
   println("The sum of the digits of " + digit + " calculated recursively is " + recursiveSumDigit(digit) + ".");
